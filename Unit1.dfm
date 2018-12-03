@@ -2,8 +2,8 @@ object Form1: TForm1
   Left = 0
   Top = 0
   Caption = #1057#1086#1079#1076#1072#1085#1080#1077' '#1085#1086#1074#1086#1075#1086' '#1087#1088#1086#1077#1082#1090#1072
-  ClientHeight = 286
-  ClientWidth = 512
+  ClientHeight = 371
+  ClientWidth = 666
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -97,24 +97,21 @@ object Form1: TForm1
     end
   end
   object MainMenu1: TMainMenu
-    Left = 544
+    Left = 560
     Top = 104
     object FileMenuItem: TMenuItem
       Caption = '&'#1060#1072#1081#1083
-      object GroupBoxMenuItem: TMenuItem
-        Caption = #1057#1086#1079#1076#1072#1090#1100' '#1085#1086#1074#1099#1081' '#1087#1088#1086#1077#1082#1090
-      end
       object OpenMenuItem: TMenuItem
         Caption = #1054#1090#1082#1088#1099#1090#1100' '#1087#1088#1086#1077#1082#1090
+        OnClick = OpenMenuItemClick
       end
       object SaveMenuItem: TMenuItem
         Caption = #1057#1086#1093#1088#1072#1085#1080#1090#1100' '#1087#1088#1086#1077#1082#1090
-      end
-      object SaveAsMenuItem: TMenuItem
-        Caption = #1057#1086#1093#1088#1072#1085#1080#1090#1100' '#1087#1088#1086#1077#1082#1090' '#1082#1072#1082'..'
+        OnClick = SaveMenuItemClick
       end
       object ExitMenuItem: TMenuItem
         Caption = #1042#1099#1093#1086#1076
+        OnClick = ExitMenuItemClick
       end
     end
     object SettingMenuItem: TMenuItem
@@ -144,13 +141,14 @@ object Form1: TForm1
     end
   end
   object OpenDialog: TOpenDialog
-    Filter = 
-      'All graphic files|*.bmp,*.ico,*.emf,*.wmf|Bitmaps|*.bmp|Icons|*.' +
-      'ico|Metafiles|*.emf,*.wmf'
-    Left = 561
-    Top = 208
+    DefaultExt = 'txt'
+    Filter = #1058#1077#1082#1089#1090#1086#1074#1099#1077' '#1092#1072#1081#1083#1099'(*.txt)|*.txt|'#1042#1089#1077' '#1092#1072#1081#1083#1099'(*.*)|*.*'
+    Title = #1054#1090#1082#1088#1099#1090#1100' '#1092#1072#1081#1083
+    Left = 553
+    Top = 240
   end
   object SaveDialog: TSaveDialog
+    Filter = #1058#1077#1082#1089#1090#1086#1074#1099#1077' '#1092#1072#1081#1083#1099'(*.txt)|*.txt|'#1042#1089#1077' '#1092#1072#1081#1083#1099'(*.*)|*.*'
     Options = [ofOverwritePrompt, ofEnableSizing]
     Left = 592
     Top = 160

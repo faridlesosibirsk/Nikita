@@ -4,7 +4,8 @@ interface
 
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
-  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.Menus, Unit2;
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.Menus, Unit2,
+  Vcl.ToolWin, Vcl.ComCtrls, System.Actions, Vcl.ActnList;
 
 type
   TForm1 = class(TForm)
@@ -21,9 +22,7 @@ type
     FileMenuItem: TMenuItem;
     OpenMenuItem: TMenuItem;
     SaveMenuItem: TMenuItem;
-    SaveAsMenuItem: TMenuItem;
     ExitMenuItem: TMenuItem;
-    GroupBoxMenuItem: TMenuItem;
     SettingMenuItem: TMenuItem;
     OrientationMenuItem: TMenuItem;
     Button1: TButton;
@@ -38,7 +37,9 @@ type
     SaveDialog: TSaveDialog;
     procedure Button1Click(Sender: TObject);
     procedure Button2Click(Sender: TObject);
-
+    procedure ExitMenuItemClick(Sender: TObject);
+    procedure OpenMenuItemClick(Sender: TObject);
+    procedure SaveMenuItemClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -64,5 +65,23 @@ close;
 end;
 
 
+procedure TForm1.ExitMenuItemClick(Sender: TObject);
+begin
+Close;
+end;
+
+
+
+procedure TForm1.OpenMenuItemClick(Sender: TObject);
+begin
+if OpenDialog.Execute then
+end;
+
+
+procedure TForm1.SaveMenuItemClick(Sender: TObject);
+begin
+SaveDialog.Execute;
+
+end;
 
 end.
