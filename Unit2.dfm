@@ -28,12 +28,6 @@ object Form2: TForm2
     Height = 13
     Caption = 'Label2'
   end
-  object Image1: TImage
-    Left = 192
-    Top = 160
-    Width = 105
-    Height = 105
-  end
   object Button1: TButton
     Left = 192
     Top = 352
